@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs UI test cases renders the main view 1`] = `ShallowWrapper {}`;
