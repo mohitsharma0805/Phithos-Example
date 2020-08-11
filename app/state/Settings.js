@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const saveBannerData = (state, action) => {
-  console.log('action.payload', action.payload);
   state.banner = action.payload;
 };
 
