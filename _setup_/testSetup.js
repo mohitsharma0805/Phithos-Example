@@ -34,12 +34,3 @@ jest.mock('../app/state/Settings', () => {
     saveBannerStatus: jest.fn(),
   };
 });
-
-jest.mock('react-redux', () => ({
-  useStore: () => '',
-  useDispatch: () => '',
-}));
-
-jest.mock('redux', () => ({
-  combineReducers: () => '',
-}));

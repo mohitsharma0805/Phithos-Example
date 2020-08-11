@@ -5,7 +5,7 @@ import { ExBanner } from '../components';
 import { selectBannerStatus } from '../state/Settings';
 import { selectUser } from '../state/User';
 
-const Login = () => {
+const Dashboard = () => {
   const bannerStatus = useSelector(selectBannerStatus);
   const user = useSelector(selectUser);
 
@@ -19,7 +19,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Dashboard;
 
 const styles = StyleSheet.create({
   contentView: { flex: 1 },

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ExBanner, ExSwitchCell } from '../components';
 import { selectBannerStatus } from '../state/Settings';
 
-const Login = () => {
+const Settings = () => {
   const dispatch = useDispatch();
   const bannerStatus = useSelector(selectBannerStatus);
 
@@ -20,7 +20,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Settings;
 
 const styles = StyleSheet.create({
   contentView: { flex: 1 },

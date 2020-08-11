@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { StackActions } from '@react-navigation/native';
@@ -12,7 +12,6 @@ const Login = ({ navigation }) => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const passwordRef = useRef(null);
   const bannerStatus = useSelector(selectBannerStatus);
   const user = useSelector(selectUser);
 
@@ -43,7 +42,6 @@ const Login = ({ navigation }) => {
           keyboardType={config.strings.EMAIL_ADDRESS_KEYBOARD_TYPE}
           blurOnSubmit={false}
           onChangeText={(text) => setEmail(text)}
-          onSubmitEditing={() => passwordRef.current.focus()}
         />
         <ExTextInput
           placeholder={config.strings.PASSWORD}
@@ -53,9 +51,6 @@ const Login = ({ navigation }) => {
           keyboardType={config.strings.EMAIL_ADDRESS_KEYBOARD_TYPE}
           blurOnSubmit={false}
           onChangeText={(text) => setPassword(text)}
-          onRefs={(ref) => {
-            passwordRef.current = ref;
-          }}
         />
         <ExButton buttonStyle={styles.button} text={config.strings.LOGIN} onPress={loginClicked} />
       </View>

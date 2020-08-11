@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   title: {
     marginLeft: 16,
     paddingVertical: 2,
+    fontSize: 17,
   },
   switch: { marginRight: 20, marginLeft: 16 },
 });

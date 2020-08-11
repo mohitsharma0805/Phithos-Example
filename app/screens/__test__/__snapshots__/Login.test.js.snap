@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Render UI with banner hidden renders the main view 1`] = `ShallowWrapper {}`;
+
+exports[`Login Render UI with show banner renders the main view 1`] = `ShallowWrapper {}`;
+
+exports[`Login UI test cases renders the main view 1`] = `ShallowWrapper {}`;
