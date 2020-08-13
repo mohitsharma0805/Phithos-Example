@@ -3,14 +3,12 @@ import { shallow } from 'enzyme';
 import { SafeAreaView, View, Text } from 'react-native';
 import * as redux from 'react-redux';
 import configureStore from 'redux-mock-store';
-import createSagaMiddleware from 'redux-saga';
 import Dashboard from '../Dashboard';
 import { ExBanner } from '../../components';
 
 describe('Dashboard', () => {
   describe('Render UI with show banner', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: true,
       user: { email: 'mohit@gmail.com' },
@@ -31,8 +29,7 @@ describe('Dashboard', () => {
     });
   });
   describe('Render UI with banner hidden', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: false,
       user: { email: 'mohit@gmail.com' },

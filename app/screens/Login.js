@@ -6,7 +6,7 @@ import { ExButton, ExTextInput, ExBanner } from '../components';
 import config from '../config';
 import { validateLoginDetails } from '../controls/Validator';
 import { selectBannerStatus } from '../state/Settings';
-import { selectUser } from '../state/User';
+import { selectUser, saveUser } from '../state/User';
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
 
   const loginClicked = () => {
     if (validateLoginDetails(email, password)) {
-      dispatch({ type: 'LOGIN', payload: { email, password } });
+      dispatch(saveUser({ email, password }));
     }
   };
 

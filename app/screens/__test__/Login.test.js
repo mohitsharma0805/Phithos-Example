@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { SafeAreaView } from 'react-native';
 import * as redux from 'react-redux';
 import configureStore from 'redux-mock-store';
-import createSagaMiddleware from 'redux-saga';
 import Login from '../Login';
 import { ExTextInput, ExButton, ExBanner } from '../../components';
 
@@ -14,8 +13,7 @@ describe('Login', () => {
     navigate: jest.fn(),
   };
   describe('Render UI with show banner', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: true,
       user: {},
@@ -47,8 +45,7 @@ describe('Login', () => {
     });
   });
   describe('Render UI with banner hidden', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: false,
       user: {},

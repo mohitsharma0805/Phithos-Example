@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { SafeAreaView } from 'react-native';
 import * as redux from 'react-redux';
 import configureStore from 'redux-mock-store';
-import createSagaMiddleware from 'redux-saga';
 import Settings from '../Settings';
 import { ExBanner, ExSwitchCell } from '../../components';
 
@@ -11,8 +10,7 @@ describe('Login', () => {
   const dispatch = jest.fn();
   redux.useDispatch.mockReturnValue(dispatch);
   describe('Rendering with show banner', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: true,
     });
@@ -33,8 +31,7 @@ describe('Login', () => {
     });
   });
   describe('Rendering with hide banner', () => {
-    const sagaMiddleware = createSagaMiddleware();
-    const mockStore = configureStore([sagaMiddleware]);
+    const mockStore = configureStore();
     const store = mockStore({
       banner: false,
     });

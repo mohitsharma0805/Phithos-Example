@@ -2,14 +2,14 @@ import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { ExBanner, ExSwitchCell } from '../components';
-import { selectBannerStatus } from '../state/Settings';
+import { selectBannerStatus, saveBannerStatus } from '../state/Settings';
 
 const Settings = () => {
   const dispatch = useDispatch();
   const bannerStatus = useSelector(selectBannerStatus);
 
   const switchValueChanged = (value) => {
-    dispatch({ type: 'UPDATE_BANNER_STATUS', payload: { status: value } });
+    dispatch(saveBannerStatus(value));
   };
 
   return (

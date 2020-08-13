@@ -8,7 +8,6 @@ jest.mock('@reduxjs/toolkit', () => ({
   combineReducers: jest.fn(() => Promise.resolve()),
   createSlice: jest.fn(() => Promise.resolve()),
   getDefaultMiddleware: jest.fn(() => Promise.resolve()),
-  createSagaMiddleware: jest.fn(),
   createAction: jest.fn(),
 }));
 

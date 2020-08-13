@@ -10,5 +10,9 @@ export const validateLoginDetails = (email, password) => {
     Alert.alert('', 'Please Enter password');
     return false;
   }
+  if (password.trim().length < 6) {
+    Alert.alert('', 'Password should be more than 5 characters');
+    return false;
+  }
   return true;
 };
